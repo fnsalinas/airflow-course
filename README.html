@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: AI Marketseat - Plan de Lanzamiento en 7 Días</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .flowchart-container {
+            scrollbar-width: thin;
+            scrollbar-color: #EF4444 #1f2937;
+        }
+        .flowchart-connector {
+            flex-grow: 1;
+            border-bottom-width: 2px;
+            border-color: #EF4444;
+            min-width: 2rem;
+        }
+        .flowchart-step {
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        .flowchart-arrow:after {
+            content: '▶';
+            color: #EF4444;
+            margin-left: -10px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            background-color: #EF4444;
+            border: 4px solid #111827;
+        }
+        .card-lift {
+            transition: all 0.3s ease-in-out;
+        }
+        .card-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <!-- 
+    Narrative & Structure Plan:
+    The infographic tells the story of AI Marketseat's rapid 7-day launch sprint.
+    1. Introduction & Urgent Opportunity: Establishes the market niche and the imperative for speed.
+    2. The MVP Solution: Presents the core value proposition for the initial launch.
+    3. Critical User Flows: Visualizes the essential customer and organizer journeys.
+    4. Lean Technical Foundation: Breaks down the technology stack chosen for rapid deployment.
+    5. The 7-Day Sprint Plan: A day-by-day tactical plan for development and launch.
+    6. Strategic Positioning: A SWOT analysis to understand the project's position post-launch.
+    7. Call to Action: A final section to drive traffic to the main website.
+    The narrative is fast-paced, focusing on execution and immediate value delivery.
+    -->
+    <!-- 
+    Palette Choice: Vibrant Red Accent (#EF4444) with Green (#22C55E) and Yellow (#EAB308) for states, based on the provided dashboard image.
+    -->
+    <!--
+    Visualization Selection & Justification (NO SVG / NO MERMAID JS CONFIRMED):
+    - Platform Features: Goal: Inform. Viz: Pictograph (HTML/CSS Unicode). Justification: Quickly conveys MVP benefits.
+    - Payment Methods: Goal: Compare. Viz: Donut Chart (Chart.js Canvas) + Icons. Justification: Shows composition and adds visual context.
+    - Technology Stack: Goal: Compare. Viz: Radar Chart (Chart.js Canvas) + Icons. Justification: Compares focus areas and visualizes the stack components.
+    - Customer Purchase Flow: Goal: Organize. Viz: Flowchart (HTML/CSS with overflow). Justification: Maps the critical path for the customer. NO SVG/Mermaid used.
+    - 7-Day Sprint Plan: Goal: Change (over time). Viz: Timeline (HTML/CSS). Justification: Visually represents the aggressive, day-by-day project schedule. NO SVG/Mermaid used.
+    - SWOT Analysis: Goal: Organize. Viz: 2x2 Grid (HTML/CSS). Justification: Standard, clear layout for strategic analysis.
+    - NEITHER Mermaid JS NOR SVG were used anywhere in this output.
+    -->
+</head>
+<body class="bg-gray-900 text-white antialiased">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-500 mb-2">AI Marketseat</h1>
+            <p class="text-xl md:text-2xl text-gray-300">Plan de Lanzamiento: Un Sprint de 7 Días</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+            <section class="md:col-span-2 xl:col-span-4 bg-gray-800 rounded-lg shadow-xl p-8 flex flex-col md:flex-row items-center gap-8 card-lift">
+                <div class="flex-1">
+                    <h2 class="text-3xl font-bold text-red-400 mb-4">La Oportunidad Exige Velocidad</h2>
+                    <p class="text-gray-300 mb-4">El nicho de eventos con venta compleja está desatendido. Con el Festival del Bambuco como catalizador, no hay tiempo para un ciclo de desarrollo tradicional. La estrategia es clara: lanzar un Producto Mínimo Viable (MVP) robusto en una semana para capturar el mercado, validar el modelo y generar tracción inmediata.</p>
+                    <p class="text-gray-300 font-semibold">Este no es un plan a largo plazo, es una directiva de ejecución inmediata.</p>
+                </div>
+                <div class="flex-shrink-0 text-center">
+                    <p class="text-lg text-gray-400">Objetivo Inmediato</p>
+                    <p class="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-400">7</p>
+                    <p class="text-2xl font-bold text-gray-300">DÍAS</p>
+                </div>
+            </section>
+
+            <section class="xl:col-span-2 bg-gray-800 rounded-lg shadow-xl p-6 card-lift">
+                <h2 class="text-2xl font-bold text-red-400 mb-6 text-center">Propuesta de Valor (MVP)</h2>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-red-900/50 rounded-lg p-3 text-3xl">🎟️</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Reserva en &lt; 3 Clics</h3>
+                            <p class="text-gray-400 text-sm">Flujo de compra optimizado para máxima conversión y experiencia de usuario.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="bg-red-900/50 rounded-lg p-3 text-3xl">💳</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Pagos Flexibles</h3>
+                            <p class="text-gray-400 text-sm">Soporte para MercadoPago y pagos en efectivo para no perder ninguna venta.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-center gap-4">
+                        <div class="bg-red-900/50 rounded-lg p-3 text-3xl">📈</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Panel de Control Esencial</h3>
+                            <p class="text-gray-400 text-sm">CRUD de eventos y gestión centralizada de reservas en tiempo real.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="xl:col-span-2 bg-gray-800 rounded-lg shadow-xl p-6 card-lift">
+                <h2 class="text-2xl font-bold text-red-400 mb-4 text-center">Modalidades de Pago</h2>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 items-center gap-4 h-full">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                             <div class="bg-green-500/20 text-green-400 rounded-full p-2 text-2xl">✓</div>
+                             <div>
+                                <h3 class="font-semibold">Digital (MercadoPago)</h3>
+                                <p class="text-gray-400 text-sm">Confirmación automática, segura y rápida para el cliente.</p>
+                             </div>
+                        </div>
+                         <div class="flex items-center gap-3">
+                             <div class="bg-yellow-500/20 text-yellow-400 rounded-full p-2 text-2xl">!</div>
+                             <div>
+                                <h3 class="font-semibold">Efectivo</h3>
+                                <p class="text-gray-400 text-sm">Requiere confirmación manual del organizador. Ideal para puntos de venta físicos.</p>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="chart-container h-52">
+                        <canvas id="paymentMethodsChart"></canvas>
+                    </div>
+                 </div>
+            </section>
+            
+            <section class="xl:col-span-4 md:col-span-2 bg-gray-800 rounded-lg shadow-xl p-6 card-lift">
+                <h2 class="text-2xl font-bold text-red-400 mb-4 text-center">Arquitectura para la Velocidad</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <img src="https://supabase.com/favicon.ico" alt="[Logo de Supabase]" class="w-10 h-10">
+                            <div>
+                                <h3 class="font-semibold">Supabase & PostgreSQL</h3>
+                                <p class="text-gray-400 text-sm">Backend como servicio (BaaS) con una base de datos robusta para acelerar el desarrollo.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-4xl">⚛️</span>
+                            <div>
+                                <h3 class="font-semibold">React / Next.js</h3>
+                                <p class="text-gray-400 text-sm">Frontend moderno y reactivo para una experiencia de usuario de primera clase.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                           <span class="text-4xl">▲</span>
+                            <div>
+                                <h3 class="font-semibold">Vercel</h3>
+                                <p class="text-gray-400 text-sm">Plataforma de despliegue optimizada para velocidad, escalabilidad y CI/CD.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container h-72">
+                        <canvas id="techStackChart"></canvas>
+                    </div>
+                 </div>
+            </section>
+
+            <section class="md:col-span-2 xl:col-span-4 bg-gray-800 rounded-lg shadow-xl p-6 overflow-hidden card-lift">
+                <h2 class="text-2xl font-bold text-red-400 mb-6">Flujo Crítico de Compra</h2>
+                <div class="overflow-x-auto flowchart-container pb-4">
+                    <div class="flex items-center text-center text-xs sm:text-sm min-w-[700px]">
+                        <div class="flowchart-step bg-gray-700 p-3 rounded-lg"><strong>1.</strong><br>Accede a Landing</div>
+                        <div class="flowchart-connector flowchart-arrow"></div>
+                        <div class="flowchart-step bg-gray-700 p-3 rounded-lg"><strong>2.</strong><br>Selecciona Asientos</div>
+                        <div class="flowchart-connector flowchart-arrow"></div>
+                        <div class="flowchart-step bg-gray-700 p-3 rounded-lg"><strong>3.</strong><br>Ingresa Datos</div>
+                        <div class="flowchart-connector flowchart-arrow"></div>
+                        <div class="flowchart-step bg-red-600 p-3 rounded-lg text-white"><strong>4.</strong><br>Elige Método de Pago</div>
+                        <div class="flowchart-connector flowchart-arrow"></div>
+                        <div class="flowchart-step bg-green-600 p-3 rounded-lg text-white"><strong>5.</strong><br>Pago y Confirmación</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="md:col-span-2 xl:col-span-4 bg-gray-800 rounded-lg shadow-xl p-6 card-lift">
+                <h2 class="text-2xl font-bold text-red-400 mb-6 text-center">Sprint de Lanzamiento: 7 Días</h2>
+                 <div class="relative pl-8 border-l-4 border-red-800">
+                    <div class="timeline-item mb-10">
+                        <h3 class="font-bold text-red-400 text-lg">Día 1-2: Fundación y Backend</h3>
+                        <p class="text-sm text-gray-300">Objetivo: Base de datos y API para eventos funcionales. Tareas: Desplegar esquema SQL, configurar RLS, implementar CRUD de eventos y recintos.</p>
+                    </div>
+                    <div class="timeline-item mb-10">
+                        <h3 class="font-bold text-red-400 text-lg">Día 3-4: Flujo de Compra y Pagos</h3>
+                        <p class="text-sm text-gray-300">Objetivo: Flujo de venta 100% funcional. Tareas: Landing de evento, mapa de asientos interactivo, integración completa con MercadoPago.</p>
+                    </div>
+                     <div class="timeline-item mb-10">
+                        <h3 class="font-bold text-red-400 text-lg">Día 5-6: Panel de Admin y Automatización</h3>
+                        <p class="text-sm text-gray-300">Objetivo: Habilitar gestión al organizador. Tareas: Confirmación de pago en efectivo, webhooks a n8n para notificaciones.</p>
+                    </div>
+                     <div class="timeline-item">
+                        <h3 class="font-bold text-green-400 text-xl">Día 7: ¡Lanzamiento!</h3>
+                        <p class="text-sm text-gray-300">Objetivo: Plataforma en vivo. Tareas: Pruebas UAT intensivas, despliegue a producción y monitoreo inicial.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="md:col-span-2 xl:col-span-4 bg-gray-800 rounded-lg shadow-xl p-8 card-lift">
+                 <h2 class="text-2xl font-bold text-red-400 mb-6 text-center">Análisis Estratégico Post-Lanzamiento (FODA)</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                     <div class="bg-green-900/50 p-4 rounded-lg border border-green-700">
+                         <h3 class="font-bold text-green-400 mb-2">Fortalezas</h3>
+                         <ul class="list-disc list-inside space-y-1 text-gray-300">
+                             <li>Arquitectura Multi-Tenant nativa</li>
+                             <li>Modelo de inventario "Seat-Centric"</li>
+                             <li>Enfoque en automatización (n8n, IA)</li>
+                             <li>Seguridad robusta con RLS de Supabase</li>
+                         </ul>
+                     </div>
+                     <div class="bg-yellow-900/50 p-4 rounded-lg border border-yellow-700">
+                         <h3 class="font-bold text-yellow-400 mb-2">Debilidades</h3>
+                         <ul class="list-disc list-inside space-y-1 text-gray-300">
+                            <li>Equipo fundador pequeño (2 personas)</li>
+                            <li>Dependencia de servicios de terceros</li>
+                            <li>Aún sin reconocimiento de marca</li>
+                         </ul>
+                     </div>
+                     <div class="bg-red-900/50 p-4 rounded-lg border border-red-700">
+                         <h3 class="font-bold text-red-400 mb-2">Oportunidades</h3>
+                         <ul class="list-disc list-inside space-y-1 text-gray-300">
+                            <li>Nicho de mercado desatendido</li>
+                            <li>Modelo White-Label para rápida expansión</li>
+                            <li>El Bot de ventas IA como diferenciador clave</li>
+                            <li>Alta demanda para eventos</li>
+                         </ul>
+                     </div>
+                     <div class="bg-gray-700 p-4 rounded-lg border border-gray-600">
+                         <h3 class="font-bold text-gray-400 mb-2">Amenazas</h3>
+                         <ul class="list-disc list-inside space-y-1 text-gray-300">
+                            <li>Plataformas grandes adaptando funciones</li>
+                            <li>Riesgos de seguridad y brechas de datos</li>
+                            <li>Cambios en APIs de servicios integrados</li>
+                         </ul>
+                     </div>
+                 </div>
+            </section>
+
+            <!-- New Call to Action Section -->
+            <section class="md:col-span-2 xl:col-span-4 bg-gray-800 rounded-lg shadow-xl p-8 text-center card-lift">
+                <h2 class="text-3xl font-bold text-red-400 mb-4">¿Listo para transformar tus eventos?</h2>
+                <p class="text-gray-300 mb-6 max-w-2xl mx-auto">Visita nuestro sitio oficial para descubrir cómo AI Marketseat puede maximizar tus ingresos y automatizar la gestión de tus graderías y palcos.</p>
+                <a href="https://aimarketseat.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-red-600 text-white font-bold text-lg px-8 py-3 rounded-lg hover:bg-red-700 transition-colors duration-300 shadow-lg">
+                    Visitar aimarketseat.com
+                </a>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 text-gray-500 text-sm">
+            <p>Infografía generada a partir del Plan de Desarrollo de AI Marketseat.</p>
+            <p>&copy; 2025. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const wrapLabel = (label, maxLength = 16) => {
+        if (typeof label !== 'string' || label.length <= maxLength) {
+            return label;
+        }
+        const words = label.split(' ');
+        let currentLine = '';
+        const lines = [];
+        for (const word of words) {
+            if ((currentLine + ' ' + word).trim().length > maxLength && currentLine.length > 0) {
+                lines.push(currentLine);
+                currentLine = word;
+            } else {
+                currentLine += (currentLine === '' ? '' : ' ') + word;
+            }
+        }
+        if (currentLine.length > 0) {
+           lines.push(currentLine);
+        }
+        return lines;
+    };
+
+    const tooltipTitleCallback = (tooltipItems) => {
+        const item = tooltipItems[0];
+        if (!item) return '';
+        let label = item.chart.data.labels[item.dataIndex];
+        if (Array.isArray(label)) {
+            return label.join(' ');
+        }
+        return label;
+    };
+    
+    const palette = {
+        red: '#EF4444',
+        red_bg: 'rgba(239, 68, 68, 0.4)',
+        green: '#22C55E',
+        yellow: '#EAB308',
+        fontColor: '#E5E7EB'
+    };
+
+
+    const paymentMethodsCtx = document.getElementById('paymentMethodsChart')?.getContext('2d');
+    if (paymentMethodsCtx) {
+        new Chart(paymentMethodsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Digital (Confirmado)', 'Efectivo (Pendiente)'],
+                datasets: [{
+                    label: 'Modalidades de Pago',
+                    data: [65, 35],
+                    backgroundColor: [palette.green, palette.yellow],
+                    borderColor: '#1f2937',
+                    borderWidth: 4,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: palette.fontColor,
+                            font: { family: "'Inter', sans-serif" }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: { title: tooltipTitleCallback }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    }
+
+    const techStackCtx = document.getElementById('techStackChart')?.getContext('2d');
+    if (techStackCtx) {
+        new Chart(techStackCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Frontend (SPA)', 'Backend (BaaS)', 'Base de Datos (PostgreSQL)', 'Seguridad (RLS)', wrapLabel('Automatización (n8n/IA)'), 'Pagos (API)'],
+                datasets: [{
+                    label: 'Foco de la Arquitectura',
+                    data: [8, 9, 9, 10, 8, 7],
+                    backgroundColor: palette.red_bg,
+                    borderColor: palette.red,
+                    pointBackgroundColor: palette.red,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: palette.red
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.2)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.2)' },
+                        pointLabels: {
+                            color: palette.fontColor,
+                             font: { family: "'Inter', sans-serif", size: 10 }
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            color: 'rgba(255, 255, 255, 0.5)',
+                            stepSize: 2
+                        }
+                    }
+                }
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>
